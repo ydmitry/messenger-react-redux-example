@@ -8,7 +8,7 @@ export default React.createClass({
 
         return <form className={"post-form " + className} onSubmit={this.onSubmit}>
             <input type="text" ref="text" name="text" value={ post.get('text') || ''} onChange={this.onChange} />
-            <input type="button" value="OK" disabled={post.get('text') ? false : true} onClick={this.onSubmit} />
+            <input type="button" value="Add post" disabled={post.get('text') ? false : true} onClick={this.onSubmit} />
         </form>
     },
 

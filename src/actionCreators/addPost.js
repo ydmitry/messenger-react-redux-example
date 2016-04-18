@@ -1,4 +1,4 @@
-import { showPosts } from '../actionCreators';
+import { showPosts, postFormChange } from '../actionCreators';
 
 export default function addPost(data) {
     return (dispatch, getState) => {
@@ -6,6 +6,7 @@ export default function addPost(data) {
 
         return model.addPost(data)
             .then(() => model.getPosts())
-            .then(result => dispatch(showPosts(result)));
+            .then(result => dispatch(showPosts(result)))
+            .then(() => dispatch(postFormChange(null)));
     }
 }

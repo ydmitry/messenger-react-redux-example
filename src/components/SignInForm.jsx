@@ -8,7 +8,7 @@ export default React.createClass({
 
         return <form className={"sign-in-form " + className} onSubmit={this.onSubmit}>
             <input type="text" ref="name" name="name" value={ user.get('name') || "" } onChange={this.onChange} />
-            <input type="button" value="OK" disabled={user.get('name') ? false : true} onClick={this.onSubmit} />
+            <input type="button" value="Sign in" disabled={user.get('name') ? false : true} onClick={this.onSubmit} />
         </form>
     },
 

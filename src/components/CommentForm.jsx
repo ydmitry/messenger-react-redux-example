@@ -9,7 +9,7 @@ export default React.createClass({
 
         return <form className={"comment-form " + className} onSubmit={this.onSubmit}>
             <input type="text" ref="text" name="text" value={ comment.get('text') || ""} onChange={this.onChange} />
-            <input type="button" value="OK" disabled={comment.get('text') ? false : true} onClick={this.onSubmit} />
+            <input type="button" value="Add comment" disabled={comment.get('text') ? false : true} onClick={this.onSubmit} />
         </form>
     },
 
