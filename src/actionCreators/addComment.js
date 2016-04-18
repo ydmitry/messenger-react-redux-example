@@ -1,4 +1,4 @@
-import { showComments } from '../actionCreators';
+import { showComments, commentFormChange } from '../actionCreators';
 
 export default function addComment(postId, data) {
     return (dispatch, getState) => {
@@ -6,6 +6,9 @@ export default function addComment(postId, data) {
 
         return model.addComment(postId, data)
             .then(() => model.getComments(postId))
-            .then(result => dispatch(showComments(postId, result)));
+            .then(result => dispatch(showComments(postId, result)))
+            .then(() => dispatch(commentFormChange(postId, {
+                comment: ''
+            })));
     }
 }
